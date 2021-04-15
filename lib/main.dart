@@ -33,8 +33,8 @@ class _MyHomePageState extends State<MyHomePage> {
   String _qrScan, _qrResult = "";
 
   Future _incrementCounter() async {
-    _qrScan =
-        await FlutterBarcodeScanner.scanBarcode("#004297", "cancel", true);
+    _qrScan = await FlutterBarcodeScanner.scanBarcode(
+        "#004297", "cancel", true, ScanMode.DEFAULT);
 
     setState(() {
       _qrResult = _qrScan;
@@ -49,27 +49,13 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
               'Scan',
             ),
             Text(
-              '$_qrScan',
+              _qrResult,
               style: Theme.of(context).textTheme.headline4,
             ),
           ],
@@ -77,9 +63,12 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
+        child: Icon(
+          Icons.camera_alt,
+          size: 30.0,
+        ),
       ), // This trailing comma makes auto-formatting nicer for build methods.
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
