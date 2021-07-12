@@ -10,12 +10,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      title: 'Scanner',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.blue[900],
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'KNS BarCode and QR Code Scanner'),
+      home: MyHomePage(title: 'Scanner'),
     );
   }
 }
@@ -32,7 +33,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   String _qrScan, _qrResult = "";
 
-  Future _incrementCounter() async {
+  Future _qrCode() async {
     _qrScan = await FlutterBarcodeScanner.scanBarcode(
         "#004297", "cancel", true, ScanMode.DEFAULT);
 
@@ -61,11 +62,15 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        child: Icon(
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: _qrCode,
+        icon: Icon(
           Icons.camera_alt,
           size: 30.0,
+        ),
+        label: Text(
+          'Scan',
+          style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
         ),
       ), // This trailing comma makes auto-formatting nicer for build methods.
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
