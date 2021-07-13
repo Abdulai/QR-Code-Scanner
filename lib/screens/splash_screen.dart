@@ -34,7 +34,7 @@ class _SplashScreenState extends State<SplashScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Image.asset('', height: 100.0),
+          Image.asset('/assets/Scanapp.pngf', height: 100.0),
           SizedBox(height: 30.0),
           SpinKitRing(color: Colors.deepOrangeAccent[700])
         ],
