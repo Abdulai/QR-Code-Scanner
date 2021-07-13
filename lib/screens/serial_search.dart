@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
 
-class SerealSearch extends StatefulWidget {
-  const SerealSearch({Key key}) : super(key: key);
+class SerialSearch extends StatefulWidget {
+  const SerialSearch({Key key}) : super(key: key);
 
   @override
-  _SerealSearchState createState() => _SerealSearchState();
+  _SerialSearchState createState() => _SerialSearchState();
 }
 
-class _SerealSearchState extends State<SerealSearch> {
+class _SerialSearchState extends State<SerialSearch> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(),
-    );
+    return Container();
   }
 }
