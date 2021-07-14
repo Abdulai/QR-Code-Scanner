@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qr_code_scanner/main.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({Key key}) : super(key: key);
@@ -10,18 +11,28 @@ class SignIn extends StatefulWidget {
 class _SignInState extends State<SignIn> {
   @override
   Widget build(BuildContext context) {
-    final emailField = TextField(
+    final emailField = TextFormField(
+      keyboardType: TextInputType.emailAddress,
       obscureText: true,
       decoration: InputDecoration(
+          prefixIcon: Icon(
+            Icons.email,
+            color: Colors.blueAccent,
+          ),
           contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
           hintText: "Email",
           border:
               OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
     );
 
-    final passwordField = TextField(
+    final passwordField = TextFormField(
+      keyboardType: TextInputType.text,
       obscureText: true,
       decoration: InputDecoration(
+          prefixIcon: Icon(
+            Icons.lock,
+            color: Colors.blueAccent,
+          ),
           contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
           hintText: "Password",
           border:
@@ -35,7 +46,13 @@ class _SignInState extends State<SignIn> {
       child: MaterialButton(
         minWidth: MediaQuery.of(context).size.width,
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => MyHomePage(),
+              ));
+        },
         child: Text('Sign In',
             textAlign: TextAlign.center,
             style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
