@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:qr_code_scanner/screens/splash_screen.dart';
+import 'package:qr_code_scanner/screens/sign_in.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,11 +10,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'QR Code',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SplashScreen(),
+      home: SignIn(),
     );
   }
 }
