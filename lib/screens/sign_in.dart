@@ -39,23 +39,28 @@ class _SignInState extends State<SignIn> {
               OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
     );
 
-    final loginButon = Material(
+    final signInButton = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(30.0),
       color: Colors.blue[900],
       child: MaterialButton(
-        minWidth: MediaQuery.of(context).size.width,
+        minWidth: 335.0,
+        height: 70.0,
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         onPressed: () {
           Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => MyHomePage(),
-              ));
+            context,
+            MaterialPageRoute(
+              builder: (context) => MyHomePage(),
+            ),
+          );
         },
-        child: Text('Sign In',
-            textAlign: TextAlign.center,
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+        child: Text(
+          'Sign In',
+          textAlign: TextAlign.center,
+          style: TextStyle(
+              fontSize: 24.0, color: Colors.white, fontWeight: FontWeight.bold),
+        ),
       ),
     );
 
@@ -86,7 +91,7 @@ class _SignInState extends State<SignIn> {
                 SizedBox(height: 25.0),
                 passwordField,
                 SizedBox(height: 35.0),
-                loginButon,
+                signInButton,
                 SizedBox(height: 15.0)
               ],
             ),
