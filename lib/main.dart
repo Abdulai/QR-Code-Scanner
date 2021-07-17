@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:qr_code_scanner/screens/check_document.dart';
+import 'package:qr_code_scanner/screens/error.dart';
 import 'package:qr_code_scanner/screens/list_of_companies.dart';
 import 'package:qr_code_scanner/screens/sign_in.dart';
 
@@ -34,7 +36,10 @@ class MyHomePage extends StatelessWidget {
         minWidth: 335.0,
         height: 70.0,
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => Document()));
+        },
         child: Text(
           'Check Document',
           textAlign: TextAlign.center,
@@ -97,7 +102,9 @@ class MyHomePage extends StatelessWidget {
                     image: AssetImage('assets/illus.png'),
                   ),
                 ),
-                Padding(padding: EdgeInsets.only(top: 75.0)),
+                Padding(
+                  padding: EdgeInsets.only(top: 75.0),
+                ),
                 checkDocumentButton,
                 SizedBox(height: 30.0),
                 companiesButton,
