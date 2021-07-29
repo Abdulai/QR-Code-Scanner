@@ -7,7 +7,7 @@ class Document extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final codeScanner = Material(
+    final codeScannerButton = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(30.0),
       color: Colors.blue[900],
@@ -30,7 +30,7 @@ class Document extends StatelessWidget {
       ),
     );
 
-    final serialNumber = Material(
+    final serialNumberButton = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(30.0),
       color: Colors.blue[900],
@@ -84,17 +84,17 @@ class Document extends StatelessWidget {
                 height: 220.0,
                 width: 287.0,
                 child: Image(
-                  image: AssetImage('assets/illus.png'),
+                  image: AssetImage('assets/check_document.jpeg'),
                 ),
               ),
               Padding(
                 padding: EdgeInsets.only(top: 75.0),
               ),
-              codeScanner,
+              codeScannerButton,
               SizedBox(
                 height: 30.0,
               ),
-              serialNumber
+              serialNumberButton
             ],
           ),
         ),

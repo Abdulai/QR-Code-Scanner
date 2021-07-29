@@ -87,28 +87,30 @@ class MyHomePage extends StatelessWidget {
         ),
       ),
       body: Center(
-        child: Container(
-          color: Colors.white10,
-          child: Padding(
-            padding: EdgeInsets.all(36.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(
-                  height: 220.0,
-                  width: 287.0,
-                  child: Image(
-                    image: AssetImage('assets/illus.png'),
+        child: SingleChildScrollView(
+          child: Container(
+            color: Colors.white10,
+            child: Padding(
+              padding: EdgeInsets.all(36.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    height: 220.0,
+                    width: 287.0,
+                    child: Image(
+                      image: AssetImage('assets/illus.png'),
+                    ),
                   ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 75.0),
-                ),
-                checkDocumentButton,
-                SizedBox(height: 30.0),
-                companiesButton,
-              ],
+                  Padding(
+                    padding: EdgeInsets.only(top: 75.0),
+                  ),
+                  checkDocumentButton,
+                  SizedBox(height: 30.0),
+                  companiesButton,
+                ],
+              ),
             ),
           ),
         ),

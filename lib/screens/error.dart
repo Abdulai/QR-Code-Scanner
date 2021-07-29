@@ -28,29 +28,31 @@ class Errors extends StatelessWidget {
         ),
       ),
       body: Center(
-        child: Column(
-          children: [
-            Padding(padding: EdgeInsets.only(bottom: 170)),
-            Image(
-              image: AssetImage('assets/error.png'),
-            ),
-            Padding(
-              padding: EdgeInsets.only(top: 40.0),
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(
-                  'Incorrect data format!',
-                  style: TextStyle(
-                      fontSize: 24.0,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.red),
-                ),
-              ],
-            )
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Padding(padding: EdgeInsets.only(bottom: 170)),
+              Image(
+                image: AssetImage('assets/error.png'),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 40.0),
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    'Incorrect data format!',
+                    style: TextStyle(
+                        fontSize: 24.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.red),
+                  ),
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );
