@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/main.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({Key key}) : super(key: key);
@@ -13,7 +15,6 @@ class _SignInState extends State<SignIn> {
   Widget build(BuildContext context) {
     final emailField = TextFormField(
       keyboardType: TextInputType.emailAddress,
-      obscureText: true,
       decoration: InputDecoration(
           prefixIcon: Icon(
             Icons.email,
