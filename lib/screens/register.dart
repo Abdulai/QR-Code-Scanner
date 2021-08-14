@@ -4,16 +4,16 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:qr_code_scanner/screens/home.dart';
 
-class SignIn extends StatefulWidget {
+class Register extends StatefulWidget {
   final Function toggleScreen;
 
-  const SignIn({Key key, this.toggleScreen}) : super(key: key);
+  const Register({Key key, this.toggleScreen}) : super(key: key);
 
   @override
   _SignInState createState() => _SignInState();
 }
 
-class _SignInState extends State<SignIn> {
+class _SignInState extends State<Register> {
   TextEditingController _emailController;
   TextEditingController _passwordController;
   final _formkey = GlobalKey<FormState>();
@@ -46,7 +46,7 @@ class _SignInState extends State<SignIn> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    "Sign In",
+                    "Welcome",
                     style: TextStyle(
                       fontSize: 60,
                       fontWeight: FontWeight.bold,
@@ -99,7 +99,7 @@ class _SignInState extends State<SignIn> {
                       borderRadius: BorderRadius.circular(25),
                     ),
                     child: Text(
-                      "Login",
+                      "Register",
                       style:
                           TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
@@ -108,11 +108,11 @@ class _SignInState extends State<SignIn> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("Don't have an account ?"),
+                      Text("Already have an account ?"),
                       SizedBox(width: 5),
                       TextButton(
                         onPressed: () => widget.toggleScreen(),
-                        child: Text("Register"),
+                        child: Text("Login"),
                       ),
                     ],
                   )

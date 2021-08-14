@@ -39,6 +39,8 @@ dependencies:
   
   # Flutter spin Kit for loading pages on splash screen
   flutter_spinkit: ^5.0.0
+  # Flutter Provider
+  provider: ^5.0.0
 
 dev_dependencies:
   flutter_test:
